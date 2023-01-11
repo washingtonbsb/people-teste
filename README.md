@@ -1,27 +1,47 @@
-# AtivosApp
+## Desafio AtivosApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3.
+<p align="center">  <img src="src/assets/logoreadme.png" width="20%"  /> </p>
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<p align="center"> <img src="src/assets/app.png" width="80%"  /></p>
 
-## Code scaffolding
+<h1 align="center" style="font-size:4em"></h1>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<p align="center">Esse é o desafio Peoples para frontEnd</p>
 
-## Build
+# Tecnologias envolvidas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Angular
+- TypeScript
+- Ng-Zorro (Ant-Framework)
+- ApexCharts
+- Angular Proxy
+- YahooFinance Api
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Features
 
-## Running end-to-end tests
+- Consultar o preço do ativo na API do Yahoo Finance
+- Implementar uma página em Angular que apresente o valor do ativo nos últimos 30 pregões e mostre a variação do preço no período. Você deverá considerar o valor de abertura (chart.result.indicators.quote.open)
+- Inclua um gráfico apresentando o resultado da variação.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Rodando o Projeto
 
-## Further help
+```
+# Clone esse repositorio
+git@github.com:washingtonbsb/people-teste.git
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Entre no repositorio
+cd people-teste
+
+# Instale as dependencias
+npm install
+
+# Inicie o front com o comando abaixo, para poder rodar o script do proxy
+npm run start
+
+
+
+```
+
+
