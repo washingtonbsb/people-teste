@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="header-container">
+    <div class="header-title-container">
+      <div class="header-title-main">
+        <h2>{{ stockName }}</h2>
+        <span>{{ currency }} {{ exchangeTimezoneName }}</span>
+      </div>
+
+      <div class="header-autocomplete-main">
+        <nz-input-group nzSize="large" [nzSuffix]="suffixIcon">
+          <input
+            placeholder="Pesquise o ativo ex: PETR4.SA"
+            nz-input
+            [(ngModel)]="inputValue"
+            (input)="onChangeInput($event)"
+            [nzAutocomplete]="auto"
+          />
+        </nz-input-group>
+        <ng-template #suffixIcon>
+          <span nz-icon nzType="search"></span>
+        </ng-template>
+        <nz-autocomplete #auto (selectionChange)="changeClickOption()">
+          <nz-auto-option
+            class="global-search-item"
+            *ngFor="let option of options"
+            [nzValue]="option.label"
+          >
+            <a>
+              {{ option.label }}
+            </a>
+          </nz-auto-option>
+        </nz-autocomplete>
+      </div>
+    </div>
+
+    <div class="header-subtitle-container">
+      <div class="header-subtitle">
+        <h2>R$ {{ stockValue }}</h2>
+        <p>{{ currency }}</p>
+        <div
+          class="{{ variationType === 'positive' ? 'colorGreen' : 'colorRed' }}"
+        >
+          <span>{{ variation }}</span>
+        </div>
+      </div>
+      <div class="header-subtitle-values-previus">
+        <div>
+          <p>R${{ stockPreviousClose }}</p>
+          <span>VALOR ANTERIOR</span>
+        </div>
+        <div>
+          <section>
+            <p>R${{ stockPrevios30days }}</p>
+            <div
+              class="{{
+                stockPrevios30daysVariationType === 'positive'
+                  ? 'colorGreen'
+                  : 'colorRed'
+              }}"
+            >
+              R${{ stockPrevios30daysVariation }}
+            </div>
+          </section>
+          <span>VALOR 30 DIAS ATRÁS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="body-container">
+    <apx-chart
+      #thisChart
+      [series]="chartOptions.series!"
+      [chart]="chartOptions.chart!"
+      [xaxis]="chartOptions.xaxis!"
+      [stroke]="chartOptions.stroke!"
+      [tooltip]="chartOptions.tooltip!"
+      [dataLabels]="chartOptions.dataLabels!"
+    ></apx-chart>
+  </div>
+</div>
